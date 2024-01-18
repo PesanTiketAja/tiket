@@ -7,11 +7,9 @@ use CodeIgniter\Router\RouteCollection;
  */
 
  $routes->resource('tiket', ['controller' => 'TiketController']);
- $routes->resource('bookingtiket', ['controller' => 'BookingTiketController']);
- 
+
  $routes->group('api', function ($routes) {
      $routes->resource('tiket', ['controller' => 'TiketController']);
-     $routes->resource('bookingtiket', ['controller' => 'BookingTiketController']);
  });
  
  $routes->get('/', 'Home::index');
