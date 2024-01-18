@@ -51,4 +51,11 @@ class TiketController extends RestfulController
             return $this->fail($this->model->errors());
         }
     }
+
+    // New method to get a single Tiket based on ID
+    public function getTiket($id)
+    {
+        $data = $this->model->find($id);
+        return $this->respond($data ?? ['message' => 'Tiket not found'], $data ? 200 : 404);
+    }
 }
